@@ -34,4 +34,31 @@ print()
 
 
 
-# Example 2: Using a stack
+# Example 2: Using a stack -- Go back!
+
+stack = list()
+
+
+
+stack.append("right")
+stack.append("down") # This is where we accidentally make a wrong turn...
+stack.append("down")
+stack.append("right")
+stack.append("down")
+
+print(stack)
+
+stack.pop()
+stack.pop()
+stack.pop()
+stack.pop()
+
+print(stack)
+
+stack.append("right")
+stack.append("right")
+stack.append("right")
+stack.append("down")
+stack.append("down")
+
+print(stack)

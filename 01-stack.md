@@ -1,10 +1,11 @@
 # **The Stack**
 
-## Introduction
+## <a name="intro"></a>Introduction
 * [Welcome](welcome.md)
 * **Stacks**
-  * [Introduction](##introduction)
+  * [Introduction](#intro)
   * [Using the Stack](#uses)
+  * [Performance](#performance)
 * [Linked Lists](02-linkedlist.md)
 * [Trees](03-tree.md)
 
@@ -50,9 +51,50 @@ While we might see A as being in the "front", A is actually at the bottom of our
 ### ***Keeping organized***
 Wait, but how does only handling what was *just* given to you keep you organized? Won’t you forget about everything at the start?
 
-Stacks help you see where you are. How many layers deep are we? 
+Well, not quite. As we'll discuss in the section regarding **Trees**, operating off of the stack helps your program see how many layers deep it is. I'll illustrate a brief bit of this concept now, to help you see just how useful the stack is. 
 
 ### **Examples**
-“Is this what I want to do?” Code snippet showing a program taking an imaginary “step” forward, testing if a calculation will work. If it does work, then it will advance to the next stage. 
+Let's imagine that we have a chunk of code that tries to walk through a maze. Such a code can actually be written using concepts that we'll learn about later on, but this perfectly illustrates the usage of a stack. Starting off, we'll have our maze look like this:
 
-This works because the program handles whatever it was told to do most recently first. [Explain more, but with code]
+![maze-start](pictures/01-maze-01.png)
+
+We start off in that little green tile on the left, and want to make it to the blue tile on the right. However, we accidentally made a wrong turn. Let's look at our stack.
+```python
+stack.append("right")
+stack.append("down") # This is where we accidentally make a wrong turn...
+stack.append("down")
+stack.append("right")
+stack.append("down")
+```
+    Instructions: ['right', 'down', 'down', 'right', 'down']
+
+This sequence of turns will put us in this situation:
+
+![maze-deadend](pictures/01-maze-02.png)
+
+Now we're stuck in a dead end! Do we have to start over? No, we can just *undo* whatever actions put us there. Our code will then pop the last few instructions from the stack and proceed as normal, until it gets to the blue tile. 
+```python
+stack.pop()
+stack.pop()
+stack.pop()
+stack.pop()
+```
+    Instructions: ['right']
+
+![maze-solved](pictures/01-maze-03.png)
+
+After getting back to a safe point, the program will continue running until it reaches the end, the blue square.
+
+```python
+stack.append("right")
+stack.append("right")
+stack.append("right")
+stack.append("down")
+stack.append("down")
+```
+    Instructions: ['right', 'right', 'right', 'right', 'down', 'down']
+
+## <a name="performance"></a> Performance
+Now that we've seen some examples of what a stack can do, lets talk about some finer details. One of the benefits of working using the stack is that it is *extremely* fast to pull something right off of the end of the stack. Thinking back to the pancake analogy, you simply reach out and grab whatever is on the top. Since you aren't rooting around the whole plate to get a single specific pancake, it doesn't matter how big the stack of pancakes is. Taking one pancake from the end is all you have to do. 
+
+In programming terms, pushing something onto the back of the stack or popping something off of the back will only take one unit of time. ***[Note: Should I assume that the reader knows what Big O Notation is?]*** Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. 
