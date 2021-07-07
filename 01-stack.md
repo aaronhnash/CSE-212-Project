@@ -54,7 +54,8 @@ Wait, but how does only handling what was *just* given to you keep you organized
 Well, not quite. As we'll discuss in the section regarding **Trees**, operating off of the stack helps your program see how many layers deep it is. I'll illustrate a brief bit of this concept now, to help you see just how useful the stack is. 
 
 ### **Examples**
-Let's imagine that we have a chunk of code that tries to walk through a maze. Such a code can actually be written using concepts that we'll learn about later on, but this perfectly illustrates the usage of a stack. Starting off, we'll have our maze look like this:
+
+**THE MAZE**: Let's imagine that we have a chunk of code that tries to walk through a maze. Such a code can actually be written using concepts that we'll learn about later on, but this perfectly illustrates the usage of a stack. Starting off, we'll have our maze look like this:
 
 ![maze-start](pictures/01-maze-01.png)
 
@@ -94,7 +95,23 @@ stack.append("down")
 ```
     Instructions: ['right', 'right', 'right', 'right', 'down', 'down']
 
+**THE CALCULATOR**: Supplied in the [sample code](01-stack.py) is a sample problem that you'll get to work through now. You're given a pre-set stack of instructions that your code must look at and interpret, according to this table below.
+
+![table](pictures/01-table.png)
+
+Your terminal should look something like this:
+
+    1st Number: 3
+    2nd Number: 4
+    Product: 12
+
+[This key](examples/01-example.py) has the solution to this example. Give it a try before looking through it!
+
+
 ## <a name="performance"></a> Performance
+
 Now that we've seen some examples of what a stack can do, lets talk about some finer details. One of the benefits of working using the stack is that it is *extremely* fast to pull something right off of the end of the stack. Thinking back to the pancake analogy, you simply reach out and grab whatever is on the top. Since you aren't rooting around the whole plate to get a single specific pancake, it doesn't matter how big the stack of pancakes is. Taking one pancake from the end is all you have to do. 
 
-In programming terms, pushing something onto the back of the stack or popping something off of the back will only take one unit of time. ***[Note: Should I assume that the reader knows what Big O Notation is?]*** Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. 
+### **Big O Notation**
+
+In programming terms, pushing something onto the back of the stack or popping something off of the back will only take one unit of time.  Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. 
