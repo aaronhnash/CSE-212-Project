@@ -62,3 +62,32 @@ stack.append("down")
 stack.append("down")
 
 print(stack)
+
+print()
+
+# Example 3: Now You try
+
+stack = []
+
+stack.append("A")
+stack.append("B")
+stack.append("C")
+stack.append("D")
+
+#while True:
+
+    ## Write code to retrieve and return the next item in the stack.
+    # instruction = ?
+
+    #if instruction == ?
+    #    pass
+    #elif instruction == ?
+    #    pass
+    #elif instruction == ?
+    #    pass
+    #elif instruction == ?
+    #    pass
+
+    #if stack == []:
+    ## Break out of the loop if it's empty. 
+    #    break
