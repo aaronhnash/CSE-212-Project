@@ -74,12 +74,6 @@ print()
 
 
 
-"""
-CSE 212 Lesson 7A Solved
-
-Implementation of a basic Linked List data structure.
-"""
-
 class LinkedList:
     """
     Implement the LinkedList data structure.  The Node class below is an 
@@ -109,6 +103,37 @@ class LinkedList:
         """
         self.head = None
         self.tail = None
+
+
+    def insert_after(self, value, new_value):
+        """
+        Insert 'new_value' after the first occurance of 'value' in
+        the linked list.
+        """
+
+        # EXAMPLE 2 START
+        # Search for the node that matches 'value' by starting at the 
+        # head of the list.
+        curr = self.head
+        new_node = LinkedList.Node(new_value)
+        # Since the new node has already been created, we can use new_node when we add it.
+        
+        while curr is not None:
+
+            if curr == self.tail: # Are we at the end of the list? If so, we can just add it after this node.
+                self.tail.next = new_node
+                new_node.prev = self.tail
+                self.tail = new_node
+            
+            elif curr.data == value: # otherwise, is this the first occurance of our value?
+                new_node.prev = curr # Remember the diagram -- don't get too jumpy and cut the links between the nodes too early!
+                new_node.next = curr.next
+
+                curr.next = new_node
+                curr.next.prev = new_node
+                break # Don't forget to tell it to exit the loop when we're done!
+
+            curr = curr.next # Go to the next node to search for 'value'
 
     def insert_head(self, value):
         """
@@ -145,27 +170,6 @@ class LinkedList:
             self.head.next.prev = None  # Disconnect the second node from the first node
             self.head = self.head.next  # Update the head to point to the second node
 
-    def insert_after(self, value, new_value):
-        """
-        Insert 'new_value' after the first occurance of 'value' in
-        the linked list.
-        """
-
-        # EXAMPLE 2 START
-        # Search for the node that matches 'value' by starting at the 
-        # head of the list.
-        curr = self.head
-        while curr is not None:
-            # YOUR CODE HERE
-            
-            # You should look out for a few exceptions:
-            # If curr is ever the tail, then we know that the value isn't located in the linked list and we should go ahead and insert after the tail.
-
-            # Otherwise, if the data is the same as the value we're looking for, you should be able to follow what we went over in the main page, no problem.
-
-
-            curr = curr.next # Go to the next node to search for 'value'
-
     def __iter__(self):
         """
         Iterate foward through the Linked List
@@ -192,4 +196,20 @@ class LinkedList:
         output += "]"
         return output
 
-# TODO: Add the answer key.
+example_linked_list = LinkedList()
+
+example_linked_list.insert_head(20)
+example_linked_list.insert_head(50)
+example_linked_list.insert_head(40)
+example_linked_list.insert_head(30)
+example_linked_list.insert_head(20)
+example_linked_list.insert_head(10)
+
+print("Contained in the linked list:")
+for item in example_linked_list:
+    print(item)
+print()
+print("After inserting a value:")
+example_linked_list.insert_after(20, 25)
+for item in example_linked_list:
+    print(item)

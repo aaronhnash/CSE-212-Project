@@ -69,13 +69,15 @@ D.prev = Z
 
 ![assimilation complete](pictures/02-node-04.png)
 
-With this complete, we now have the tools to completely write a function to do all of this automatically. Yes!
+With this complete, we now have the tools to completely write a function to do all of this automatically. Yes! Let's use the skills we learned in the last example to complete our next task.
 
-[In the same code](02-linkedlist.py) as above, we have our second example. (FINISH WRITING EXAMPLE TEXT HERE)
-[Here's the key](examples/02-example.py).
-## <a name="examples"></a> Example: disconnect one item and add another. 
 
-### Tying it together with a stack
+## <a name="examples"></a> Example: Between the Nodes
 
+[In the same code](02-linkedlist.py) as above, we have our second example. Much like the example above, we're going to write a function to add a node (Z) in between two nodes that are already tied together (C & D). It's pretty self explanatory, so head on over and check it out!
+
+[Here's the key](examples/02-example.py) for when you think you've got it, or when you get stumped. But don't give in too easily!
 
 ## <a name="performance"></a> Performance
+
+Like we saw above, when we want to insert a new value into a linked list, our performance depends both on how close to the start we want to add the new value and hiw many items are inside the list. In the worst case scenario, we'd need to iterate through every single item in the linked list, so this would give us O(n) performance. Other operations, like adding a new head or tail to a linked list, is done in O(1) time, since we only have to touch one piece of data.
