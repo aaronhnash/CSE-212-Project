@@ -1,5 +1,5 @@
 
-#Example 1: Visualizing a stack
+# Visualizing a stack
 
 
 stack = list()
@@ -34,7 +34,7 @@ print()
 
 
 
-# Example 2: Using a stack -- Go back!
+# Using a stack -- Go back!
 
 stack = list()
 
@@ -65,7 +65,7 @@ print(stack)
 
 print()
 
-# Example 3: Now You try
+# Example 1: Now You try
 
 stack = []
 
@@ -74,7 +74,7 @@ stack.append("B")
 stack.append("C")
 stack.append("D")
 
-#while True:
+#while True: # uncomment all of this once you've started workeing on the problem!
 
     ## Write code to retrieve and return the next item in the stack.
     # instruction = ?
@@ -91,3 +91,33 @@ stack.append("D")
     #if stack == []:
     ## Break out of the loop if it's empty. 
     #    break
+
+# Example 2: Functions within Functions
+
+def functionA():
+    # call another function here!
+    # YOUR CODE HERE
+
+    print("Function A")
+
+def functionB():
+    # YOUR CODE HERE
+
+    print("Function B")
+
+def functionC():
+    # YOUR CODE HERE
+    
+    print("Function C")
+
+def functionD():
+    # YOUR CODE HERE
+
+    print("Function D")
+
+def functionE():
+    # YOUR CODE HERE
+
+    print("Function E")
+
+functionE()

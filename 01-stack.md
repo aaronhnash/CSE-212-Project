@@ -107,6 +107,15 @@ Your terminal should look something like this:
 
 [This key](examples/01-example.py) has the solution to this example. Give it a try before looking through it!
 
+**THE OPERATING STACK**: Now, let's look at another stack problem, one that you'll solve to see if you've got the stack down! Given in the sample code above is a series of functions that will need to be called inside of each other in order to get a specific output. Your terminal will look like the following:
+
+    Function A
+    Function D
+    Function B
+    Function C
+    Function E
+
+If you look, there's a bit of a hint at the bottom. We call functionE() first, what could that mean...?
 
 ## <a name="performance"></a> Performance
 
@@ -114,4 +123,10 @@ Now that we've seen some examples of what a stack can do, lets talk about some f
 
 ### **Big O Notation**
 
-In programming terms, pushing something onto the back of the stack or popping something off of the back will only take one unit of time.  Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. 
+In programming, there's something called "Big O Notation". Essentially, it's a way to quantify or measure how efficient a program is at performing its duties. 
+
+If something is done in O(1) time, that means that when this program is called, it will do it in one unit of time. If something is done in O(n) time, that means that every increae in n will result in a linear increase in the time it takes to complete the task. N, in this case, represents the number of items that the program has to sort through. 
+
+In the case of the stack, pushing or popping something onto or off of the back of the stack will only take one unit of time, since it only touches one item--the most recent entry into the stack. Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. This means that popping and pushing occurs in O(1) time. 
+
+If you were to write a function to return the names of each item in the stack, then that would be O(n) time, since if there are 'n' items in a stack, then the function would have to go through every item in the stack.
