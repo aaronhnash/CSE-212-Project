@@ -41,10 +41,10 @@ def is_valid_move(maze, curr_path, x, y):
     place to move given the size of the maze, the content of the maze,
     and the current path already traversed.
     """
-    # Can't go outside of the maze boundary (assume maze is a square)
-    if x > len(maze)-1 or x < 0:
+    # Can't go outside of the maze boundary
+    if x > len(maze[0])-1 or x < 0: # get the width
         return False
-    if y > len(maze)-1 or y < 0:
+    if y > len(maze)-1 or y < 0: # get the height
         return False
     # Can't go through a wall
     if maze[y][x] == 0:
@@ -62,13 +62,9 @@ def solve_maze(maze, x=0, y=0, curr_path=None):
     """
     # If this is the first time running the function, then we need
     # to initialize the curr_path list.
+    #print("called")
     if curr_path is None:
         curr_path = []
-        #curr_path.append((x,y))
-
-
-    # ADD CODE HERE   
-
 
     # Add your current move.
     curr_path.append((x,y))
@@ -103,3 +99,17 @@ def solve_maze(maze, x=0, y=0, curr_path=None):
         curr_path.pop() # Take a step back
 
 solve_maze(maze)
+
+# Your terminal output should list coordinates like this:
+"""
+[(0, 0), (0, 1), (0, 2), (0, 3), 
+(0, 4), (0, 5), (0, 6), (0, 7), 
+(0, 8), (1, 8), (2, 8), (2, 9), 
+(2, 10), (3, 10), (4, 10), (5, 10), 
+(6, 10), (7, 10), (7, 9), (7, 8), 
+(7, 7), (7, 6), (6, 6), (5, 6), 
+(4, 6), (4, 5), (4, 4), (5, 4), 
+(5, 3), (5, 2), (6, 2), (7, 2), 
+(7, 3), (7, 4), (8, 4), (9, 4), 
+(10, 4), (11, 4), (12, 4), (13, 4)]
+"""

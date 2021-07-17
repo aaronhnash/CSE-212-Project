@@ -77,6 +77,13 @@ Why does that work out? It prints them out in the opposite order--the last item 
 Let's analyze the code to see how the stack figures into this. The first time the function is called, it takes the count and subtracts one from it. Then, it checks if the count is greater than or equal to 0. If it is, the function calls itself again. It will do this until count is less than 0. When that happens, where are we? Well, we're at the top of the stack--it has now finished calling itself when count is equal to 0, and so it goes on to the next line where it prints out our message. It then goes back up a layer and then prints out the next message, and then the next. Impressive, right?
 
 Remember when I said that we'd learn something that could solve that maze for us, from the first example? Well, now we have all the tools to do just that!
+
+### Example: The Amazingly Recursive Maze
+
+![recursion all the way down](pictures/03-recursive-maze-01.png)
+
+We'll be using a slightly more complicated maze here than in our stack example. [Here's the code](03-tree.py) that you'll be working through for this example. This maze is represented graphically here, but in Python, it's stored as a list (available [here](examples/maze.py) if you really want to see it). The function to test if a certain move is valid has already been completed, so all you have to do is create a recursive function that tests each possible direction. Can the position advance to the left? Can it move to the right? How about down? Remember what I said about stacks--that's key for this example! As always, [there's a key](examples/03-example.py) if you happen to get stuck, but make sure to give it an honest try before you head straight to it. Good luck!
+
 ## Binary Search Trees
 ### ***Moving Through a Tree with Recursion***
 
@@ -91,3 +98,7 @@ Remember when I said that we'd learn something that could solve that maze for us
 ### ***Uses of a tree/working with trees***
 * How does the concept of the stack help when working with trees?
 * BST - Binary Search Trees
+
+## Example: Searching through a binary search tree
+
+## Performance

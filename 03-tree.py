@@ -76,10 +76,10 @@ def is_valid_move(maze, curr_path, x, y):
     place to move given the size of the maze, the content of the maze,
     and the current path already traversed.
     """
-    # Can't go outside of the maze boundary (assume maze is a square)
-    if x > len(maze)-1 or x < 0:
+    # Can't go outside of the maze boundary
+    if x > len(maze[0])-1 or x < 0: # get the width
         return False
-    if y > len(maze)-1 or y < 0:
+    if y > len(maze)-1 or y < 0: # get the height
         return False
     # Can't go through a wall
     if maze[y][x] == 0:
