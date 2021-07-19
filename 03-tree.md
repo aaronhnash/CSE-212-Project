@@ -114,3 +114,5 @@ As always, [there's the answer key](examples/03-example.py) for when you're fini
 ## <a name="performance"></a>Performance
 
 Let's conclude this section with a quick look at performance. Ordinarily, looking through a tree for an item would be O(n) performance. However, when the tree is sorted, it allows us to look through the tree in O(log n) time, which is *much* faster than O(n) time. Basically, you're dividing the amount of "area" that you have to search every time move down a level (either left or right), meaning that you can ignore large amounts of the data tree that you don't need to look at.
+
+<< [Prev](02-linkedlist.md) | [Home](welcome.md) | **Next >>**

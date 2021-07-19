@@ -82,3 +82,5 @@ With this complete, we now have the tools to completely write a function to do a
 ## <a name="performance"></a> Performance
 
 Like we saw above, when we want to insert a new value into a linked list, our performance depends both on how close to the start we want to add the new value and hiw many items are inside the list. In the worst case scenario, we'd need to iterate through every single item in the linked list, so this would give us O(n) performance. Other operations, like adding a new head or tail to a linked list, is done in O(1) time, since we only have to touch one piece of data.
+
+<< [Prev](01-stack.md) | [Home](welcome.md) | [Next >>](03-tree.md)

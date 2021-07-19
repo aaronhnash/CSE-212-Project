@@ -131,3 +131,5 @@ If something is done in O(1) time, that means that when this program is called, 
 In the case of the stack, pushing or popping something onto or off of the back of the stack will only take one unit of time, since it only touches one item--the most recent entry into the stack. Since you aren't taking anything from the bottom of the stack, nothing you do to the top will affect anything below it, making operations on a stack pass quickly. This means that popping and pushing occurs in O(1) time. 
 
 If you were to write a function to return the names of each item in the stack, then that would be O(n) time, since if there are 'n' items in a stack, then the function would have to go through every item in the stack.
+
+**<< Prev** | [Home](welcome.md) | [Next >>](02-linkedlist.md)
