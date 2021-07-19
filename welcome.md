@@ -1,15 +1,16 @@
-# [Insert Name Here]
+# Stacks, Linked Lists & Trees
 
 
 ## Introduction
 
-### Brief Summary
-What is this about? **WRITE**
+This document is a tutorial meant to help those already familiar with Python become more familiar with three very important concepts in data structures--the stack, the linked list, and trees. 
 
 1. [Stacks](01-stack.md)
 1. [Linked Lists](02-linkedlist.md)
 1. [Trees](03-tree.md)
 
-## Contact Info
-My info goes here
+## Contact Me!
+Aaron Nash
+
+Email: nas20003@byui.edu
 
