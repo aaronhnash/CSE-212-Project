@@ -8,6 +8,7 @@
   * [Nodes](#nodes)
   * [Examples](#examples)
   * [Performance](#performance)
+  * **Code:** [Problems](02-linkedlist.py) | [Answers](examples/02-example.py)
 * [Trees](03-tree.md)
 
 

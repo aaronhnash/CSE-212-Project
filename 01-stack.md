@@ -6,6 +6,7 @@
   * [Introduction](#intro)
   * [Using the Stack](#uses)
   * [Performance](#performance)
+  * **Code:** [Problems](01-stack.py) | [Answers](examples/01-example.py)
 * [Linked Lists](02-linkedlist.md)
 * [Trees](03-tree.md)
 

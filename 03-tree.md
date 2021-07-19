@@ -6,9 +6,10 @@
 * [Linked Lists](02-linkedlist.md)
 * **Trees**
   * [Introduction](#intro)
-  * [Recursion](#nodes)
+  * [Recursion](#recursion)
   * [Binary Search Trees](#bst)
   * [Performance](#performance)
+  * **Code:** [Problems](03-tree.py) | [Answers](examples/03-example.py)
 
 ### ***What is a tree?***
 Let's think back to the linked list. Each node in the list had a maximum of one node in the node.next position, and a maximum of one node in the node.prev position. Trees operate in much of the same manner! The main difference here is that a tree's node can have multiple different nodes in the node.next position. Let's take a look at a picture here. 
@@ -23,7 +24,7 @@ Here's what the tree we want to talk about looks like. If you flip it upside dow
 What we might call the *trunk* of a real tree, we call the "root" in technical terms. The root is like the head from a linked list, but the difference is that a root can have multiple nodes directly connected to it. Root node A has two child nodes, node B and node C. Each of them form their own subtrees below them. When a node has nothing below it, it's called a leaf node. 
 
 
-## Recursion
+## <a name="recursion"></a>Recursion
 Before we go any further to discuss the uses of a tree, it would be beneficial to take a quick detour to talk about recursion. What *is* recursion?
 ### ***Recursion***
 Recursion is the process of a function calling itself within itself. Let's look at some sample code.
@@ -84,7 +85,7 @@ Remember when I said that we'd learn something that could solve that maze for us
 
 We'll be using a slightly more complicated maze here than in our stack example. [Here's the code](03-tree.py) that you'll be working through for this example. This maze is represented graphically here, but in Python, it's stored as a list (available [here](examples/maze.py) if you really want to see it). The function to test if a certain move is valid has already been completed, so all you have to do is create a recursive function that tests each possible direction. Can the position advance to the left? Can it move to the right? How about down? Remember what I said about stacks--that's key for this example! As always, [there's a key](examples/03-example.py) if you happen to get stuck, but make sure to give it an honest try before you head straight to it. Good luck!
 
-## Binary Search Trees
+## <a name="bst"></a>Binary Search Trees
 
 Now that we have all of our tools, let's talk about one specific kind of tree--the binary search tree, or BST. While a parent node on a normal tree *can* have more than two children nodes, parent nodes on a BST *cannot*. A binary search tree is also special in two other ways--it is balanced, and it is sorted! In order to explain more, I'll need to show you a picture. 
 
@@ -110,6 +111,6 @@ Now we can move on to an example. [Here](03-tree.py), we have yet another exampl
 
 As always, [there's the answer key](examples/03-example.py) for when you're finished. Good luck! 
 
-## Performance
+## <a name="performance"></a>Performance
 
 Let's conclude this section with a quick look at performance. Ordinarily, looking through a tree for an item would be O(n) performance. However, when the tree is sorted, it allows us to look through the tree in O(log n) time, which is *much* faster than O(n) time. Basically, you're dividing the amount of "area" that you have to search every time move down a level (either left or right), meaning that you can ignore large amounts of the data tree that you don't need to look at.
