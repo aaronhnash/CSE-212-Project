@@ -85,20 +85,31 @@ Remember when I said that we'd learn something that could solve that maze for us
 We'll be using a slightly more complicated maze here than in our stack example. [Here's the code](03-tree.py) that you'll be working through for this example. This maze is represented graphically here, but in Python, it's stored as a list (available [here](examples/maze.py) if you really want to see it). The function to test if a certain move is valid has already been completed, so all you have to do is create a recursive function that tests each possible direction. Can the position advance to the left? Can it move to the right? How about down? Remember what I said about stacks--that's key for this example! As always, [there's a key](examples/03-example.py) if you happen to get stuck, but make sure to give it an honest try before you head straight to it. Good luck!
 
 ## Binary Search Trees
-### ***Moving Through a Tree with Recursion***
 
+Now that we have all of our tools, let's talk about one specific kind of tree--the binary search tree, or BST. While a parent node on a normal tree *can* have more than two children nodes, parent nodes on a BST *cannot*. A binary search tree is also special in two other ways--it is balanced, and it is sorted! In order to explain more, I'll need to show you a picture. 
 
+### ***Perfectly Balanced***
+![as all things should be](pictures/03-bst-01.png)
 
-* Like a linked list, but each “parent” node can have multiple “children” nodes—butt they’re still part of the same branch. 
-* An easy way to look at it is to look at an actual tree. Has one “root” (or stumps, but “stump” sounds less cool than “root”) that begins to branch off. Each new branch can have multiple smaller branches coming off of it, but each branch only has one main limb that it connects to.
-## Tying everything together
-![Recursion gif](https://giphy.com/gifs/recursive-VVXKKoFxQk5pu)
-* What does a tree have in common with linked lists? How is it different?
-* How does a 
-### ***Uses of a tree/working with trees***
-* How does the concept of the stack help when working with trees?
-* BST - Binary Search Trees
+Here, we have the tree that we should be quite familiar with. Each node has (at most) two children, and only one parent. But let's look at what's different between the structure of a BST and a normal tree. In a normal tree, you could have a subtree (or branch) have however many children, and those children could have however many children. Let's look back at one of our pictures we already have. 
 
-## Example: Searching through a binary search tree
+![you again??](pictures/03-tree-01.png)
+
+In this picture, A has 2 children, B and C. C only has one child, while B has 2. Only one of B's children, D, has a child, while C's child F has 2 children. This is **not** a balanced tree. In order for a tree to be balanced, each node on the current level must have as many children as it can before it can move on to the next level. In the case of the BST, each node must have 2 children before those children nodes can have children nodes. See the pattern in the BST I first showed you?
+
+### ***Sorted***
+![are they al sorted? sorta](pictures/03-bst-02.png)
+
+If you look at the BST above, you might notice a pattern... Everything to the left of the first node (50) is smaller than 50, while everything to the right of 50 is greater than 50! And if you go down a level to 20, you can see that everything to the left of 20 is less than 20, while everything to the right of 20 is 35. That's the name of the game in a sorted BST--left means less than, right means greater than! This makes searching through a BST simple, far more simple than searching through a regular linked list for a value! Let's work through an example logically, and then work through it in code.
+
+Assume we have a BST containing values like we have above. Since the BST is sorted, I get to test it pretty easily. If I want to see if the number 20 is found in the list, I look at the first number. does 20 = 50? No, 20 < 50, so I should look to the left. Does 20 = 20? Yes, we found our match. Ok, then let's think of another number. Does my list contain the number 53? 53 > 50, so look to the right. 53 < 65, so look to the left, 53 < 60, and 53 < 57. But I just got to the end of the tree, and 53 isn't anywhere in there. It looks like this tree doesn't have the number 53 in it. 
+
+### ***Example: Recursive Searching***
+
+Now we can move on to an example. [Here](03-tree.py), we have yet another example, if you scroll down to the BST class and the internal "contains()" and "_search_bst()" methods. Your job is, using the logic we just described above, write a function that can search through a sorted BST for a specific value. 
+
+As always, [there's the answer key](examples/03-example.py) for when you're finished. Good luck! 
 
 ## Performance
+
+Let's conclude this section with a quick look at performance. Ordinarily, looking through a tree for an item would be O(n) performance. However, when the tree is sorted, it allows us to look through the tree in O(log n) time, which is *much* faster than O(n) time. Basically, you're dividing the amount of "area" that you have to search every time move down a level (either left or right), meaning that you can ignore large amounts of the data tree that you don't need to look at.
